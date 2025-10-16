@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: process.env.NODE_ENV === "production" ? process.env.DOTENV_FILE_PATH : ".env" });
 console.log("DATABASE", process.env.DATABASE_URL);
 import Fastify from "fastify";
 import { registerPostRoutes } from "./controllers/post.js";
