@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+console.log("DATABASE", process.env.DATABASE_URL);
 import Fastify from "fastify";
 import { registerPostRoutes } from "./controllers/post.js";
 import { registerAuthRoutes } from "./controllers/auth.js";
@@ -8,6 +11,7 @@ import { registerAuthMiddleware } from "./middleware/auth.js";
 import FastifySwagger from "@fastify/swagger";
 import FastifySwaggerUi from "@fastify/swagger-ui";
 import { registerErrorMiddleware } from "./middleware/error.js";
+
 // import ApiSdk from "./src/sdk";
 
 const logger = {
